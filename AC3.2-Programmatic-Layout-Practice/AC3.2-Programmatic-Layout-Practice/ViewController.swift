@@ -15,10 +15,11 @@ class ViewController: UIViewController {
     self.view.backgroundColor = .green
     
     // 1. Add Scroll View 
-    view.addSubview(scrollView)
+    self.view.addSubview(scrollView)
     self.scrollView.translatesAutoresizingMaskIntoConstraints = false
-    
     // 2. Add Scroll Constraints
+
+
     //self.edgesForExtendedLayout = []
     let _ = [
         scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8.0),
@@ -33,17 +34,16 @@ class ViewController: UIViewController {
     
     // 4. Add View Contraints
     let _ = [
-        redView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 2.0),
-        redView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 2.0),
-        
-        //Make it scroll
-        redView.topAnchor.constraint(equalTo: self.scrollView.topAnchor),
-        redView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor),
-        redView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor),
-        redView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor)
-        ].map {$0.isActive = true}
-    
-    // 5. Make it scroll
+      redView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 2.0),
+      redView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 2.0),
+      
+      // 5. Make it scroll
+      redView.topAnchor.constraint(equalTo: self.scrollView.topAnchor),
+      redView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor),
+      redView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor),
+      redView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+      ].map{ $0.isActive = true }
+  
     
   }
 
